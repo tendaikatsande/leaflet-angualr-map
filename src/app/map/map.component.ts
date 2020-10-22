@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { from } from 'rxjs';
-import * as L from 'leaflet'
+import 'leaflet'
+import 'leaflet-routing-machine'
+declare let L
+
 import 'leaflet.BounceMarker'
 
 import "leaflet/dist/images/marker-shadow.png";
@@ -8,7 +11,6 @@ import "leaflet/dist/images/marker-icon.png";
 import "leaflet/dist/images/marker-icon-2x.png";
 import 'node_modules/leaflet-geosearch/dist/geosearch.css';
 import * as GeoSearch from 'leaflet-geosearch';
-import 'leaflet-routing-machine'
 
 @Component({
   selector: 'app-map',
