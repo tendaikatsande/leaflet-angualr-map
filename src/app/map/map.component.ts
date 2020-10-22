@@ -139,14 +139,17 @@ export class MapComponent implements OnInit {
 
   onMapReady() {
     console.log("ggggggg")
-    L.Routing.control({
-      waypoints: [L.latLng(-17.7831936, 31.011635199999997), L.latLng(-17.867416604114297, 31.007847469300035)],
-      routeWhileDragging: true
-    }).on('routesfound', function (e) {
-      var routes = e.routes;
-      console.log("routes found", routes)
-      // alert('Found ' + routes.length + ' route(s).');
-    }).addTo(this.map)
+    try {
+      L.Routing.control({
+        waypoints: [L.latLng(-17.7831936, 31.011635199999997), L.latLng(-17.867416604114297, 31.007847469300035)],
+        routeWhileDragging: true
+      }).on('routesfound', function (e) {
+        var routes = e.routes;
+        console.log("routes found", routes)
+        // alert('Found ' + routes.length + ' route(s).');
+      }).addTo(this.map)
+    } catch (x) { }
+
   }
 
 
